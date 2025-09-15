@@ -58,7 +58,7 @@ exports.getTask = async (req, res) => {
 
     if (
       task.createdBy.toString() !== req.user._id.toString() &&
-      task.assignedTo.toString() !== req.user._id.toString() &&
+      task.assignedTo?.toString() !== req.user._id.toString() &&
       req.user.role === "user"
     ) {
       return res.json({ message: "Not authorized to see another user's task" });
