@@ -80,7 +80,7 @@ exports.updateTask = async (req, res) => {
     // Permission: admin/manager OR creator of the task
     if (
       task.createdBy.toString() !== req.user._id.toString() &&
-      task.assignedTo.toString() !== req.user._id.toString() &&
+      task.assignedTo?.toString() !== req.user._id.toString() &&
       req.user.role === "user"
     ) {
       return res.status(403).json({ message: "Not authorized" });
