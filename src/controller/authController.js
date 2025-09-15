@@ -62,7 +62,7 @@ exports.logoutUser = (req, res) => {
     httpOnly: true,
     expires: new Date(0),
     secure: true,
-    sameSite: "none",
+    sameSite: "None",
   });
   res.status(200).json({ message: "Logged out" });
 };
